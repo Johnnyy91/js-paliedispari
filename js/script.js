@@ -4,30 +4,18 @@ console.log('JS OK')
 
 //CHIEDO ALL'UTENTE DI INSERIRE UNA PAROLA
 
-const word = prompt('Inserisci una parola');
-
+let word = prompt('Inserisci una parola');
+let wordReverse = word.split("").reverse().join("");
+const container = document.querySelector('.container');
+container.innerHTML = word && wordReverse;
 
 //CREO FUNZIONE PER CAPIRE SE PAROLA PALINDROMA OPPURE NO
 
-function checkPalindrom() {
-
-    if (isNaN(word)) {
-        console.log(word);
-    }
-    else {
-        console.log('Inserisci una parola')
-    }
-
-    for (let i = word.length; i > 0; i--) {
-        if (word[i] = word.charAt(word.length) - 1) {
-            console.log('the word is palindrome.');
-        } else {
-            console.log('the word is not palindrome!');
-        }
-    }
+if (word === wordReverse) {
+    console.log("la parola è palindroma");
+} else{
+    console.log("la parola non è palindroma")
 }
-checkPalindrom();
-console.log(checkPalindrom);
 
 
 
@@ -82,13 +70,15 @@ if (!isNaN(total)) {
 //DICHIARO VINCITORE
 let result;
 
-if(user === oddOreven)
+if(user === oddOreven && total <= 10)
 {
     result = 'winner User'
 }
-
-else {
+if (user !=oddOreven && total <= 10){
     result = 'winner PC'
+}
+else {
+    console.log('ERROR')
 }
 
 console.log(result)
