@@ -1,12 +1,13 @@
 console.log('JS OK')
-/*
-//Palindroma
-//Chiedere all’utente di inserire una parola
+
+//ESERCIZIO 1 (PALINDROMO)
+
+//CHIEDO ALL'UTENTE DI INSERIRE UNA PAROLA
 
 const word = prompt('Inserisci una parola');
 
 
-//Creare una funzione per capire se la parola inserita è palindroma
+//CREO FUNZIONE PER CAPIRE SE PAROLA PALINDROMA OPPURE NO
 
 function checkPalindrom() {
 
@@ -27,27 +28,28 @@ function checkPalindrom() {
 }
 checkPalindrom();
 console.log(checkPalindrom);
-*/
 
 
-/*
-Pari e Dispari
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random(sempre da 1 a 5) per il computer(usando una funzione).
-Sommiamo i due numeri
-Stabiliamo se la somma dei due numeri è pari o dispari(usando una funzione)
-Dichiariamo chi ha vinto.
-*/
 
-
+//ESERCIZIO 2 (PARI O DISPARI)
 
 //CHIEDO UTENTE PARI O DISPARI
 const user = prompt('Inserisci pari o dispari');
-console.log(user);
+if (user === 'pari' && 'dispari'){
+    console.log(user);
+}else {
+    alert('error');
+}
+
 
 //CHIEDO A UTENTE DI INSERIRE NUMERO DA 1 A 5
 const number = parseInt(prompt('Inserisci numero da 1 a 5'));
-console.log(number);
+if (number > 0 && number <6){
+    console.log(number);
+}else {
+    alert('error')
+}
+
 
 // GENERO NUMERO RANDOM PC
 let pc = parseInt(Math.random() * 5 + 1) ;
@@ -55,8 +57,11 @@ console.log(pc);
 
 //SOMMIAMO I DUE NUMERI
 function plusNumb(num1, num2) {
+    if (num1 <= 5){
     const sum = num1 + num2;
     return sum;
+
+    } return 'error'
 }
 
 const total = plusNumb(number, pc);
